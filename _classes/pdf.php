@@ -7,7 +7,7 @@
 
 session_start();
 
-$ruche_selectionner = $bdd->query('SELECT * FROM ruche_data WHERE ruche_id='.$_SESSION['ruche'].' ORDER BY jour ASC');
+$ruche_selectionner = $bdd_ruche->query('SELECT * FROM ruche_data WHERE ruche_id='.$_SESSION['ruche'].' ORDER BY jour ASC');
 
 $document = new Dompdf();
 
