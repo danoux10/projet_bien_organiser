@@ -10,4 +10,3 @@
 		include '../_config/bdd.php';
 		include '../_function/cookie.php';
 	?>
-</head>
