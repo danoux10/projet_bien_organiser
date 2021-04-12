@@ -1,8 +1,7 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Document sans titre</title>
+<!DOCTYPE html>
+
+<?php include '../controller/header.php';?>
+<title>Observer Ruche</title>
 </head>
 
 <body>
