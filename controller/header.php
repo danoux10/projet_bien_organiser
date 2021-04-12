@@ -9,4 +9,5 @@
 		include '../_config/config.php';
 		include '../_config/bdd.php';
 		include '../_function/cookie.php';
+		include '../_classes/selection.php'
 	?>
