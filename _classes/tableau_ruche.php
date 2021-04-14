@@ -1,7 +1,7 @@
 <?php
     $ruche_selectionner = $bdd_ruche->query('SELECT * FROM ruche_data WHERE ruche_id='.$_SESSION['ruche'].' ORDER BY jour ASC');
-    echo "<div class='table'>";
-     echo "<table class='affiche'>";
+    echo "<div id='tableau_ruche'>";
+     echo "<table id='affiche_ruche'>";
                 echo "<thead class='table_head'>";
                     echo "<tr class='cellule'>";
                         echo "<th colspan='2' class='centre'>id</th>";

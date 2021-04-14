@@ -7,13 +7,13 @@
 	
 	<h2 id="titre_user">gere utilisateur</h2>
     <div id="user">
-		<div class="table_utilisateur">
+		<div id="tableau_utilisateur">
             <?php 
                 include '../_function/tableau_utilisateur.php';
             ?>
         </div>
         
-        <div id="formulaire">    
+        <div id="formulaire_utilisateur">    
 			<table>	
 				<tbody>
 					<tr>
@@ -45,7 +45,7 @@
             <input type="submit" value="valider" name="valider_utilisateur" id="valide">
         </form>
     	
-			<div class="affiche_selection">
+			<div id="affiche_selection">
 			<?php 
 				//session_start();
 				if(isset($_POST['valider_utilisateur'])){
@@ -59,10 +59,10 @@
 						$prenom_selection = $users['prenom'];
 						$email_selection = $users['email'];
 					}
-					echo "<table class='table_selection'>";
-						echo "<caption class='table_title'> utilisateur selectioner </caption>";
-						echo "<thead class='table_head'>";
-							echo "<tr class='cellule'>";
+					echo "<table id='tableau_selection'>";
+						echo "<caption id='tableau_title'> utilisateur selectioner </caption>";
+						echo "<thead>";
+							echo "<tr class='cellule table_head'>";
 								echo "<th class='centre'>Nom</th>";
 								echo "<th class='centre'>Prenom</th>";
 								echo "<th class='centre'>Email</th>";

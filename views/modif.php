@@ -11,7 +11,7 @@ if (!empty($_POST)) {
 		}
 		/*Unicite des compte pseudo*/
 		else{
-			$req = $bdd -> prepare('SELECT id FROM utilisateur WHERE nom = ?');
+			$req = $bdd_user -> prepare('SELECT id FROM utilisateur WHERE nom = ?');
 			$req ->execute([$_POST['nom']]);
 			$user = $req -> fetch();
 		}
@@ -21,7 +21,7 @@ if (!empty($_POST)) {
 		}
 		/*Unicite des compte pseudo*/
 		else{
-			$req = $bdd -> prepare('SELECT id FROM utilisateur WHERE prenom = ?');
+			$req = $bdd_user -> prepare('SELECT id FROM utilisateur WHERE prenom = ?');
 			$req ->execute([$_POST['prenom']]);
 			$user = $req -> fetch();
 		}
@@ -32,7 +32,7 @@ if (!empty($_POST)) {
 		}
 		/*Unicite des compte mail*/
 		else{
-			$req = $bdd -> prepare('SELECT id FROM utilisateur WHERE email = ?');
+			$req = $bdd_user -> prepare('SELECT id FROM utilisateur WHERE email = ?');
 			$req ->execute([$_POST['email']]);
 			$email = $req -> fetch();
 		}
@@ -44,10 +44,10 @@ if (!empty($_POST)) {
 		/*cryptage mot de passe*/
 		if(empty($errors)){
 			//session_start();
-			$req = $bdd->prepare('UPDATE utilisateur SET nom = ?, prenom = ?, password = ?, email = ? WHERE id='.$_SESSION['utilisateur'].'');
+			$req = $bdd_user->prepare('UPDATE utilisateur SET nom = ?, prenom = ?, password = ?, email = ? WHERE id='.$_SESSION['utilisateur'].'');
 			$password = password_hash($_POST['password'],PASSWORD_BCRYPT);
 			$req -> execute([$_POST['nom'],$_POST['prenom'],$password,$_POST['email']]);
-			//$user_id = $bdd -> lastInsertId();
+			//$user_id = $bdd_user -> lastInsertId();
 			exit();
 			
 		}
