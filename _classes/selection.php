@@ -7,7 +7,7 @@
     //$datetime = $bdd-> query('SELECT DISTINCT jour FROM ruche_data WHERE ruche_id='.$_SESSION['ruche'].' ORDER BY jour ASC');
     
     //select user
-    $select_user ="<select name='user'>";
+    $select_user ="<select name='user' class='selection'>";
     $select_user .="<option value='0'> choisir utilisateur </option>";
 
     while($utilisateur = $user->fetch()){
@@ -20,7 +20,7 @@
     $select_user .="</select>";
     
     //select ruche
-    $select_ruche = "<select name='ruche'>";
+    $select_ruche = "<select name='ruche' class='selection'>";
         $select_ruche .="<option selected value=0> choisir une ruche </option>";
     
         while($selection_ruche = $ruche->fetch()){
