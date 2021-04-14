@@ -42,7 +42,7 @@
             <?php 
                 echo $select_user;
             ?>    
-            <input type="submit" value="valider" name="valider_utilisateur" id="valide">
+            <input type="submit" value="valider" name="valider_utilisateur" id="valide_utilisateur">
         </form>
     	
 			<div id="affiche_selection">
