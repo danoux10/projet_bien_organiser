@@ -27,7 +27,7 @@
                 <?php 
                     print $select_ruche; 
                 ?>
-                <input type="submit" value="valider ruche" name="valide_ruche">
+                <input type="submit" value="valider ruche" name="valide_ruche" id="valide_ruche">
             </form>
         
             <div id="csv_pdf">
