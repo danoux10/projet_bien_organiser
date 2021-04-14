@@ -9,7 +9,7 @@
 		}
 		/*Unicite des compte pseudo*/
 		else{
-			$req = $bdd -> prepare('SELECT id FROM utilisateur WHERE nom = ?');
+			$req = $bdd_user -> prepare('SELECT id FROM utilisateur WHERE nom = ?');
 			$req ->execute([$_POST['nom']]);
 			$user = $req -> fetch();
 		}
@@ -19,7 +19,7 @@
 		}
 		/*Unicite des compte pseudo*/
 		else{
-			$req = $bdd -> prepare('SELECT id FROM utilisateur WHERE prenom = ?');
+			$req = $bdd_user -> prepare('SELECT id FROM utilisateur WHERE prenom = ?');
 			$req ->execute([$_POST['prenom']]);
 			$user = $req -> fetch();
 		}
@@ -30,7 +30,7 @@
 		}
 		/*Unicite des compte mail*/
 		else{
-			$req = $bdd -> prepare('SELECT id FROM utilisateur WHERE email = ?');
+			$req = $bdd_user -> prepare('SELECT id FROM utilisateur WHERE email = ?');
 			$req ->execute([$_POST['email']]);
 			$email = $req -> fetch();
 			if ($email) {
@@ -45,11 +45,11 @@
 		/*cryptage mot de passe*/
 		if(empty($errors)){
 			//session_start();
-			$req = $bdd->prepare("INSERT INTO utilisateur SET nom = ?, prenom = ?, password = ?, email = ?, token=?");
+			$req = $bdd_user->prepare("INSERT INTO utilisateur SET nom = ?, prenom = ?, password = ?, email = ?, token=?");
 			$password = password_hash($_POST['password'],PASSWORD_BCRYPT);
             $token = str_random(60);
 			$req -> execute([$_POST['nom'],$_POST['prenom'],$password,$_POST['email'], $token]);
-			$user_id = $bdd -> lastInsertId();
+			$user_id = $bdd_user -> lastInsertId();
 			//exit();
 		}
         header('location:affichage_utilisateur.php');
