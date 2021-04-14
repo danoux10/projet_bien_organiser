@@ -4,96 +4,88 @@
 <title>Gere les utilisateur</title>
 </head>
 <body>
-	<?php 
-		$selection = $bdd_user->query('SELECT * FROM utilisateur ORDER BY id');
-	?>
-    <div class="user">
-    <table class="affiche">
-        <thead>
-            <tr class="title">
-                <th colspan="2" class="centre">id</th>
-                <th colspan="2" class="centre">nom</th>
-                <th colspan="2" class="centre">prenom</th>
-                <th colspan="2" class="centre">email</th>
-            </tr>
-        </thead>
-        <tbody>
+	
+	<h2 id="titre_user">gere utilisateur</h2>
+    <div id="user">
+		<div class="table_utilisateur">
             <?php 
-                while($affichage = $selection->fetch()){
-                    //variable selection
-                    $id = $affichage['id'];
-                    $nom = $affichage['nom'];
-                    $prenom = $affichage['prenom'];
-                    $email = $affichage['email'];
-                    
-                    //affichage
-                    echo "<tr>"; 
-                        echo "<td colspan='2' class='centre'>$id</td>";
-                        echo "<td colspan='2' class='centre'>$nom</td>";
-                        echo "<td colspan='2' class='centre'>$prenom</td>";
-                        echo "<td colspan='2' class='centre'>$email</td>";
-                    echo "</tr>";
-                }
+                include '../_function/tableau_utilisateur.php';
             ?>
-        </tbody>
-    </table>
+        </div>
         
-    <div id="formulaire">    
-    <!--ajouter utilisateur-->
-    <form target="_blank" action="inscription.php" id="inscription">
-        <input type="submit" value="ajouter un utilisateur">    
-    </form> 
-    <!--formulaire de selection utilisateur-->
-    <form method="post" id="selection">
-        <!--select user-->
-        <?php 
-            echo $select_user;
-        ?>    
-        <input type="submit" name="valider_utilisateur" value="valider">
-    </form>
-        
-    <!--modifier utilisateur-->
-    <form method="post" id="modifier">
-        <input type="submit" value="modifier utilisateur" name="modifier">
-    </form>
-    <!--supprimer utilisateur-->
-    <form method="post" id="supprimer">
-        <input type="submit" value="supprimer utilisateur" name="supprimer_utilsateur" onClick="myFunction()">
-    </form>
-    </div>
-    <!--fin user-->    
-    </div>
-    <?php 
-        session_start();
-        if(isset($_POST['valider_utilisateur'])){
-           
-            $_SESSION['utilisateur'] = $_POST['user'];
-                
-                //debug $utilisateur
-            //echo $utilisateur;
-                
-            $utilisateur_selectionner = $bdd_user -> query('SELECT * FROM utilisateur WHERE id='.$_SESSION['utilisateur'].'');
-            //$utilisateur_selectionner = $bdd -> query('SELECT * FROM utilisateur WHERE email=loic.cb@gmail.com');
-            
-            while($users = $utilisateur_selectionner->fetch()){
-                $nom_selection = $users['nom'];
-                $prenom_selection = $users['prenom'];
-                $email_selection = $users['email'];
-                
-                echo "<p class='selection'> $nom_selection      $prenom_selection     $email_selection";
-            }
-        }
-    
-         //delete user
-        if(isset($_POST['supprimer_utilsateur'])){
-            
-            $delet_user = $bdd_user -> prepare('DELETE FROM utilisateur WHERE id='.$_SESSION['utilisateur'].'');
-            $delet_user->execute();
-                  
-        }
-   
-        
-        
-    ?>
+        <div id="formulaire">    
+			<table>	
+				<tbody>
+					<tr>
+						<td>
+							<form target="_blank" action="inscription.php" id="inscription">
+								<input type="submit" value="ajouter un utilisateur" id="ajouter">    
+							</form> 
+						</td>
+						<td>
+							<form target="_blank" action="inscription.php" id="modif">
+								<input type="submit" value="modifier un utilisateur" id="modifier">    
+							</form> 
+						</td>
+						<td>
+							<form target="_blank" action="inscription.php" id="suppresion">
+								<input type="submit" value="supprimer un utilisateur" id="supp">    
+							</form>
+						</td>
+					</tr>
+				</tbody>
+         	</table>
+			
+		<!--formulaire de selection utilisateur-->
+        <form method="post" id="selection">
+            <!--select user-->
+            <?php 
+                echo $select_user;
+            ?>    
+            <input type="submit" value="valider" name="valider_utilisateur" id="valide">
+        </form>
+    	
+			<div class="affiche_selection">
+			<?php 
+				//session_start();
+				if(isset($_POST['valider_utilisateur'])){
+
+					$_SESSION['utilisateur'] = $_POST['user'];
+
+					$utilisateur_selectionner = $bdd -> query('SELECT * FROM utilisateur WHERE id='.$_SESSION['utilisateur'].'');
+
+					while($users = $utilisateur_selectionner->fetch()){
+						$nom_selection = $users['nom'];
+						$prenom_selection = $users['prenom'];
+						$email_selection = $users['email'];
+					}
+					echo "<table class='table_selection'>";
+						echo "<caption class='table_title'> utilisateur selectioner </caption>";
+						echo "<thead class='table_head'>";
+							echo "<tr class='cellule'>";
+								echo "<th class='centre'>Nom</th>";
+								echo "<th class='centre'>Prenom</th>";
+								echo "<th class='centre'>Email</th>";
+							echo "</tr>";
+						echo "<tbody>";
+							echo "<tr>";
+								echo "<td class='centre'> $nom_selection </td>";
+								echo "<td class='centre'> $prenom_selection </td>";
+								echo "<td class='centre'> $email_selection </td>";
+							echo "<tr>";
+						echo "</tbody>";
+					echo "</table>";
+				}
+
+				 //delete user
+				if(isset($_POST['supprimer_utilsateur'])){
+					$delet_user = $bdd -> prepare('DELETE FROM utilisateur WHERE id='.$_SESSION['utilisateur'].'');
+					$delet_user->execute();
+					header('location:affichage_utilisateur.php');
+				}       
+			?>
+			</div>
+		</div><!--fin formulaire--> 
+	</div><!--fin user-->
 </body>
 </html>
