@@ -1,4 +1,69 @@
 
+ /*size img*/
+.image_miel{
+  width: 25%;
+}
+
+  /*placement img*/
+.image_inscription{
+    display: flex;
+    justify-content: center;
+}
+
+.inscription{
+    display: flex;
+    justify-content:center;
+    margin-top: 5%;
+}
+
+  /*style ext form*/
+.formulaire_inscription{
+     border: 3px outset #b56100;
+     padding: .5% 0 .5% 0;
+}
+
+  /*placement element form*/
+.nom_prenom, .email_confirm_email, .password_confirm_password{
+    display: flex;
+    justify-content: space-around;
+}
+
+.nom_inscription, .prenom_inscription, .email_inscription, .password_inscription{
+    display: flex;
+    flex-direction: column;
+}
+
+.nom_inscription .nom_label, .prenom_inscription .prenom_label, .email_inscription .inscription_email_label, .password_inscription .inscription_password_label{
+    display: flex;
+    justify-content: center;
+    margin-top: 8%;
+    margin-bottom: 1%;
+}
+
+    /*test style input*/
+.input_nom, .input_prenom, .inscription_input_email, .inscription_input_password{
+    border: 1px outset #ffbb00;
+}
+
+    /*placement bt valider*/
+.inscription_valide{
+    display: flex;
+    justify-content: center;
+    margin-top: 4%;
+}
+
+    /*style bt valide*/
+.inscription_bt_valide{
+    background: lime;
+    border:1px outset #ffbb00;
+    font-weight: bolder;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.inscription_bt_valide:hover{
+    box-shadow: 1px 1px 1px #b56100;
+}
 
 /*responsive*/
 @media screen and (max-width: 360px){

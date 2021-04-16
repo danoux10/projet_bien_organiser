@@ -1,4 +1,134 @@
 
+.ruche_img{
+    width: 15%;
+}
+
+.affichage_ruche{
+    display: flex;
+    justify-content: center;
+}
+
+.bloc_ruche{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+/*Style ruche selection*/
+
+/*page ruche*/
+/*style csv & pdf*/
+.csv_pdf{
+    display: flex;
+}
+
+.lien_csv_pdf{
+    text-decoration: none;
+    color: #b56100;
+}
+
+.lien_csv_pdf:hover{
+    border-bottom: 1px solid #b56100;
+    font-weight: bold;
+}
+
+/*style bloc titre page*/
+    #titre{
+        margin-left: .5%;
+        text-shadow: 1px 1px #c0c0c0;
+    }
+
+    #titre .titre_ruche{
+        margin-left: 3.5%;
+        font-size: 130%;
+    }
+
+/*placement titre & fomulaire*/
+
+.bloc_nav_ruche{
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*bloc formulaire*/
+.formulaire{
+    margin-top: 1%;
+    margin-right: 2%;
+    align-items: center;
+}
+
+    /*style bouton graph & table*/
+.bt_graph{
+    border: none;
+    background: none;
+    color: #b56100;
+}
+
+.bt_graph:hover{
+    cursor: pointer;
+    color: black;
+}
+
+
+/*bloc graph & table*/
+#tableau_graph{
+    display: flex;
+    justify-content: space-around;
+}
+
+/*style tableau*/
+.table{
+    width: 45%;
+}
+
+.affiche {
+    font-family:sans-serif;
+    width: 100%;
+    border: 1px solid #000;
+    box-shadow: 1px 1px #000;
+}
+
+.centre {
+    border: 1px solid #000;
+    text-align: center;
+}
+
+.cellule:nth-child(even), .table_head {
+    background-color: #dddddd;
+}
+
+/*style graphique*/
+.graph{
+    width: 45%;
+    background: lime;
+}
+
+.graphique{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+    box-shadow: 1px 1px #000;
+}
+
+
+/*style carte*/
+.imagecontainer{
+    width: 500px;
+    height: 500px;
+}
+
+.imagecontainer > img{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+#active{
+    display: block;
+}
 
 /*responsive*/
 @media screen and (max-width: 360px){

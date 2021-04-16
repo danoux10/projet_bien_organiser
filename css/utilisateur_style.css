@@ -1,4 +1,63 @@
+#titre_user{
+	text-transform: uppercase;
+	margin-left: .5%;	
+}
+/*tableau style*/
 
+.affiche_utilisateur {
+    border: 1px solid #000;
+    box-shadow: 1px 1px #000;
+}
+
+.centre {
+    border: 1px solid #000;
+    text-align: center;
+}
+
+.cellule:nth-child(even), .table_head{
+    background-color: #dddddd;
+}
+
+/* placement*/
+#user{
+	display: flex;
+	justify-content: space-between;
+	margin: 0 1%;
+}
+
+.affiche_selection{
+	margin-top: 1%;
+	display: flex;
+	justify-content: center;
+}
+
+.table_title{
+	margin-bottom: 1%;
+	font-weight: bold;
+}
+
+/*style btn*/
+
+#ajouter, #valide{
+	background: #008000;
+	color: #fff;
+	border:1px solid #d0d0d0;
+}
+
+#modifier{
+	border:1px solid #d0d0d0;
+}
+
+#supp{
+	border: 1px solid #d0d0d0;
+	background: #dc143c;
+	color: #fff;
+}
+
+#supp:hover, #ajouter:hover, #modifier:hover, #valide:hover{
+	cursor: pointer;
+	box-shadow: 1px 1px 1px #808080;
+}
 
 /*responsive*/
 @media screen and (max-width: 360px){
