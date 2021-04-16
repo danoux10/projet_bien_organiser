@@ -1,8 +1,38 @@
 
+#bloc_erreur{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+h1,p{
+    display: flex;
+    justify-content: center;
+}
+
+#image_erreur{
+    transform: rotate(90deg);
+}
+
+
 
 /*responsive*/
 @media screen and (max-width: 360px){
-
+    h1{
+         font-size: 80%;   
+    }
+    
+    p{
+        font-size: 70%;
+    }
+    
+    #bloc_erreur{
+        margin-top: 5%;
+    }
+    
+    #image_erreur{
+        width: 10%;
+    }
 }
 
 @media screen and (max-width: 480px){
@@ -14,11 +44,23 @@
 }
 
 @media screen and (max-width: 768px){
-     
+    #bloc_erreur{
+        margin-top: 50%;
+    }
+    
+    #image_erreur{
+        width: 40%;
+    }
 }
 
 @media screen and (min-width: 768px){
+    #bloc_erreur{
+        margin-top: 10%;
+    }
     
+    #image_erreur{
+        width: 20%;
+    }
 }
 
 @media screen and (min-width: 1025px){
@@ -46,7 +88,12 @@
 }
 
 @media screen and (min-width: 2100px){
-
+    #bloc_erreur{
+        margin-top: 10%;
+    }
+    #image_erreur{
+        width: 15%;
+    }
 }
 
 

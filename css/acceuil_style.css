@@ -1,4 +1,13 @@
 
+#bloc_acceuil{
+    display:flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+#image_accueil{
+    width: 40%;
+}
 
 /*responsive*/
 @media screen and (max-width: 360px){

@@ -1,4 +1,72 @@
 
+#connection{
+    display: flex;
+    justify-content:center;
+    margin-top: 5%;
+}
+
+/*style ext form*/
+#formulaire_connection{
+     border: 3px outset #b56100;
+     padding: 1% 1% 1% 1%;
+}
+
+#titre_connection{
+    
+}
+
+#image_connection{
+    display: flex;
+    justify-content: center;
+}
+
+#image_abeille_connection{
+  width: 40%;
+}
+
+/*placement element form*/
+#email_connection, #password_connection{
+    display: flex;
+    flex-direction: column;
+    margin: 10% 0 10% 0;
+}
+
+#password_connection{
+    margin-top: 15%;    
+}
+
+#email_connection #connection_email_label, #password_connection #connection_password_label{
+    display: flex;
+    justify-content: center;
+}
+    /*test style input*/
+#connection_input_email, #connection_input_password{
+    border: 1px outset #ffbb00;
+}
+
+    /*placement bt valider*/
+#connection_valide{
+    display: flex;
+    justify-content: center;
+    margin-top: 4%;
+}
+    
+    /*style bt valider*/
+#connection_valide_btn{
+    background: #008000;
+    border:1px outset #ffbb00;
+    font-weight: bolder;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#connection_valide_btn:hover{
+    box-shadow: 1px 1px 1px #b56100;
+}
+    /*size text*/
+#connection_input_email #connection_input_password{
+    font-size: 15px;
+}
 
 /*responsive*/
 @media screen and (max-width: 360px){
