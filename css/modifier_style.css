@@ -5,19 +5,19 @@
 }
 
   /*placement img*/
-.image_inscription{
+.image_modifier{
     display: flex;
     justify-content: center;
 }
 
-.inscription{
+.modifier{
     display: flex;
     justify-content:center;
     margin-top: 5%;
 }
 
   /*style ext form*/
-.formulaire_inscription{
+.formulaire_modifier{
      border: 3px outset #b56100;
      padding: .5% 0 .5% 0;
 }
@@ -28,12 +28,12 @@
     justify-content: space-around;
 }
 
-.nom_inscription, .prenom_inscription, .email_inscription, .password_inscription{
+.nom_modifier, .prenom_modifier, .email_modifier, .password_modifier{
     display: flex;
     flex-direction: column;
 }
 
-.nom_inscription .nom_label, .prenom_inscription .prenom_label, .email_inscription .inscription_email_label, .password_inscription .inscription_password_label{
+.nom_modifier .nom_label, .prenom_modifier .prenom_label, .email_modifier .modifier_email_label, .password_modifier .modifier_password_label{
     display: flex;
     justify-content: center;
     margin-top: 8%;
@@ -41,19 +41,19 @@
 }
 
     /*test style input*/
-.input_nom, .input_prenom, .inscription_input_email, .inscription_input_password{
+.input_nom, .input_prenom, .modifier_input_email, .modifier_input_password{
     border: 1px outset #ffbb00;
 }
 
     /*placement bt valider*/
-.inscription_valide{
+.modifier_valide{
     display: flex;
     justify-content: center;
     margin-top: 4%;
 }
 
     /*style bt valide*/
-.inscription_bt_valide{
+.modifier_bt_valide{
     background: lime;
     border:1px outset #ffbb00;
     font-weight: bolder;
@@ -61,7 +61,7 @@
     cursor: pointer;
 }
 
-.inscription_bt_valide:hover{
+.modifier_bt_valide:hover{
     box-shadow: 1px 1px 1px #b56100;
 }
 

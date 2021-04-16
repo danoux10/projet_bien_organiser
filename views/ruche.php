@@ -10,29 +10,29 @@
             $ruche=$_POST['ruche'];
         }
     ?>
-    <div id="bloc_nav_ruche">
+    <div class="bloc_nav_ruche">
         <div id="titre">
-            <h2 id="titre_ruche_observation">Observer ruche</h2>
+            <h2 class="titre_ruche_observation">Observer ruche</h2>
 
             <!--titre ruche-->
             <?php 
-                echo "<h3 id='titre_ruche'>ruche n°".$_SESSION['ruche']."</h3>";
+                echo "<h3 class='titre_ruche'>ruche n°".$_SESSION['ruche']."</h3>";
             ?>
         </div>
     
-        <div id="formulaire_ruche">
+        <div class="formulaire">
 
             <!--form selection ruche-->
-            <form method="post" id="selection_ruche">
+            <form method="post" class="selection_ruche">
                 <?php 
                     print $select_ruche; 
                 ?>
-                <input type="submit" value="valider ruche" name="valide_ruche" id="valide_ruche">
+                <input type="submit" value="valider ruche" name="valide_ruche">
             </form>
         
-            <div id="csv_pdf">
-                <table id="tableau_csv_pdf">
-                    <tr id="cellule_csv_pdf">
+            <div class="csv_pdf">
+                <table class="table_csv_pdf">
+                    <tr class="cellule_csv_pdf">
                         <td>Télécharger les données :</td>
                         <td> <a href="csv.php" class="lien_csv_pdf">excel</a> </td>
                         <td> / </td>
@@ -42,18 +42,18 @@
             </div>
         
             <!--form affichage tableau/graphique-->
-            <table id="tableau_graph">
-                <tr id="cellule_graph">
+            <table id="table_graph">
+                <tr class="cellule_graph">
                         <td>Afficher :</td>
-                    <form method="post" class="form_graph">
-                        <td> <input type="submit" value="tableau" name="tableau" id="btn_graph"> </td>
+                    <form method="post" class="tableau_graph">
+                        <td> <input type="submit" value="tableau" name="tableau" class="bt_graph"> </td>
                     </form>
                 </tr>
             </table>
         </div>
     </div>
     
-    <div id="affiche_graph">
+    <div id="tableau_graph">
         <?php        
         
             if(isset($_POST['tableau'])){

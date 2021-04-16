@@ -7,13 +7,13 @@
 	
 	<h2 id="titre_user">gere utilisateur</h2>
     <div id="user">
-		<div id="tableau_utilisateur">
+		<div class="table_utilisateur">
             <?php 
                 include '../_function/tableau_utilisateur.php';
             ?>
         </div>
         
-        <div id="formulaire_utilisateur">    
+        <div id="formulaire">    
 			<table>	
 				<tbody>
 					<tr>
@@ -42,27 +42,27 @@
             <?php 
                 echo $select_user;
             ?>    
-            <input type="submit" value="valider" name="valider_utilisateur" id="valide_utilisateur">
+            <input type="submit" value="valider" name="valider_utilisateur" id="valide">
         </form>
     	
-			<div id="affiche_selection">
+			<div class="affiche_selection">
 			<?php 
 				//session_start();
 				if(isset($_POST['valider_utilisateur'])){
 
 					$_SESSION['utilisateur'] = $_POST['user'];
 
-					$utilisateur_selectionner = $bdd -> query('SELECT * FROM utilisateur WHERE id='.$_SESSION['utilisateur'].'');
+					$utilisateur_selectionner = $bdd_user -> query('SELECT * FROM utilisateur WHERE id='.$_SESSION['utilisateur'].'');
 
 					while($users = $utilisateur_selectionner->fetch()){
 						$nom_selection = $users['nom'];
 						$prenom_selection = $users['prenom'];
 						$email_selection = $users['email'];
 					}
-					echo "<table id='tableau_selection'>";
-						echo "<caption id='tableau_title'> utilisateur selectioner </caption>";
-						echo "<thead>";
-							echo "<tr class='cellule table_head'>";
+					echo "<table class='table_selection'>";
+						echo "<caption class='table_title'> utilisateur selectioner </caption>";
+						echo "<thead class='table_head'>";
+							echo "<tr class='cellule'>";
 								echo "<th class='centre'>Nom</th>";
 								echo "<th class='centre'>Prenom</th>";
 								echo "<th class='centre'>Email</th>";
@@ -79,7 +79,7 @@
 
 				 //delete user
 				if(isset($_POST['supprimer_utilsateur'])){
-					$delet_user = $bdd -> prepare('DELETE FROM utilisateur WHERE id='.$_SESSION['utilisateur'].'');
+					$delet_user = $bdd_user -> prepare('DELETE FROM utilisateur WHERE id='.$_SESSION['utilisateur'].'');
 					$delet_user->execute();
 					header('location:affichage_utilisateur.php');
 				}       

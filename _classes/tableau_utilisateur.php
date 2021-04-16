@@ -1,6 +1,6 @@
 <?php
-    $utilisateur = $bdd_utilisateur->query('SELECT * FROM utilisateur ORDER BY id');
-     echo "<table id='affiche_utilisateur'>";
+      $utilisateur = $bdd_user->query('SELECT * FROM utilisateur ORDER BY id');
+     echo "<table class='affiche_utilisateur'>";
                 echo "<thead>";
                     echo "<tr class='cellule table_head'>";
                         echo "<th colspan='2' class='centre'>nom</th>";
@@ -25,5 +25,5 @@
                     echo "</tr>";
                 }
                 echo "</tbody>";
-	  echo "</table>";
+            echo "</table>";
 ?>
