@@ -36,14 +36,14 @@ function reconnect_from_cookie()
 		require_once '../_config/config.php';
 		require_once '../_config/bdd.php';
 
-		if (!isset($bdd)) {
-			global $bdd;
+		if (!isset($bdd_user)) {
+			global $bdd_user;
 		}
 
 		$remember_token = $_COOKIE['remember'];
 		$parts = explode('==', $remember_token);
 		$user_id = $parts[0];
-		$req = $bdd-> prepare('SELECT * FROM utilisateur WHERE id = ?');
+		$req = $bdd_user-> prepare('SELECT * FROM utilisateur WHERE id = ?');
 		$req-> execute([$user_id]);
 		$user = $req->fetch();
 
