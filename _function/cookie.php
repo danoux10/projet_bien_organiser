@@ -34,7 +34,7 @@ function reconnect_from_cookie()
 {
 	if (isset($_COOKIE['remember']) && !isset($_SESSION['auth'])) {
 		require_once '../_config/config.php';
-		require_once '../_config/bdd.php';
+		require_once '../_config/bdd_ruche.php';
 
 		if (!isset($bdd_user)) {
 			global $bdd_user;

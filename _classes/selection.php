@@ -2,8 +2,8 @@
 
    session_start();
 
-    $user = $bdd_utilisateur->query('SELECT * FROM utilisateur');
-    $ruche = $bdd_ruche->query('SELECT DISTINCT ruche_id FROM ruche_data ORDER BY ruche_id ASC');
+    $user = $bdd_user->query('SELECT * FROM utilisateur');
+    $ruche = $bdd_data->query('SELECT DISTINCT ruche_id FROM ruche_data ORDER BY ruche_id ASC');
     //$datetime = $bdd-> query('SELECT DISTINCT jour FROM ruche_data WHERE ruche_id='.$_SESSION['ruche'].' ORDER BY jour ASC');
     
     //select user

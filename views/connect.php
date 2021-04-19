@@ -24,7 +24,7 @@
         if (!empty($_POST) && !empty($_POST['email']) && !empty($_POST['password'])) {
 
 				require_once '../_config/config_local.php';
-				require_once '../_config/bdd.php';
+				require_once '../_config/bdd_ruche.php';
 
 
 				$req = $bdd_user -> prepare('SELECT * FROM utilisateur WHERE (email = :email OR  password = :email)');

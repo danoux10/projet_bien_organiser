@@ -19,8 +19,8 @@
     <link rel="stylesheet" href="../css/utilisateur_style.css">
 	
     <?php 
-		include '../_config/config.php';
-		include '../_config/bdd.php';
+		include '../_config/bdd_ruche.php';
+		include '../_config/bdd_utilisateur.php';
 		include '../_function/cookie.php';
 		include '../_classes/selection.php'
 	?>
